@@ -4,6 +4,15 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.empty? %>
+
+  <div class="panel panel-default items" style="text-align:center;">
+  <h3 style="background-color: #f0ad4e;">Your cart is empty! </h3>
+ <button type="button" class="btn btn-info" style="color: #000000;"><%= link_to "Let\'s add something!", :root %> </button>
+  </div>
+
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -32,6 +41,7 @@
     </table>
   </div>
 
+
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -47,6 +57,8 @@
         </script>
       <% end %>
     </div>
+    
   </div>
+<% end %>
 
 </section>
